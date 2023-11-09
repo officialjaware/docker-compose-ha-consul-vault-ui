@@ -76,7 +76,7 @@ services:
 
 
   consul:
-    image: 'consul'
+    image: 'hashicorp/consul'
     init: true
     command: 'agent -datacenter docker -server -bootstrap-expect 1 -disable-host-node-id -client 0.0.0.0 -ui -data-dir /consul/data'
     healthcheck:
@@ -94,7 +94,7 @@ services:
 
 
   consul-worker:
-    image: 'consul'
+    image: 'hashicorp/consul'
     init: true
     entrypoint: ''
     command:
@@ -118,7 +118,7 @@ services:
 
 
   vault:
-    image: 'vault'
+    image: 'hashicorp/vault'
     init: true
     #exports work around vault bug https://github.com/hashicorp/vault/issues/3866
     #IP is the IP address of the default networking route
